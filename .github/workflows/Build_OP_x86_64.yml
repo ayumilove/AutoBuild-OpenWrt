@@ -71,11 +71,12 @@ jobs:
       run: |
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        ./scripts/feeds install -a
+    #   ./scripts/feeds install -a
 
-    #- name: Import external feeds
-    #  working-directory: ./openwrt
-    #  run: |
+    - name: Import external feeds
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
     #    git clone https://github.com/xiaorouji/openwrt-package.git package/lienol
     #    git clone "your_github_link" package/"your_folder_name"      
 
